@@ -43,42 +43,21 @@ DeepLabV3+ is selected for its ability to capture multi-scale contextual informa
 
 ## 1️⃣ Create Virtual Environment
 
-```bash
-python -m venv landcover_env
-source landcover_env/bin/activate      # Linux / Mac
-landcover_env\Scripts\activate         # Windows
 
 
 
-# ⚙️ Environment Setup
+
 
 ## 1️⃣ Create Virtual Environment
 
 ```bash
-python -m venv landcover_env
+conda create -n landcover_env python=3.10 -y
+conda activate landcover_env
 ```
 
-Activate environment:
-
-**Linux / Mac**
-```bash
-source landcover_env/bin/activate
-```
-
-**Windows**
-```bash
-landcover_env\Scripts\activate
-```
-
----
 
 ## 2️⃣ Install Dependencies
 
-Upgrade pip:
-
-```bash
-pip install --upgrade pip
-```
 
 Install required libraries:
 
@@ -87,12 +66,6 @@ pip install torch torchvision
 pip install segmentation-models-pytorch timm
 pip install opencv-python
 pip install numpy matplotlib tqdm albumentations
-```
-
-Or install using requirements file:
-
-```bash
-pip install -r requirements.txt
 ```
 
 ---
