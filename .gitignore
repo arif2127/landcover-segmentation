@@ -10,12 +10,10 @@ venv/
 
 # Dataset
 data/
-*.tif
-*.png
+
 
 # Outputs
 outputs/
-*.pth
 
 # Jupyter
 torch
