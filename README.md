@@ -47,3 +47,137 @@ DeepLabV3+ is selected for its ability to capture multi-scale contextual informa
 python -m venv landcover_env
 source landcover_env/bin/activate      # Linux / Mac
 landcover_env\Scripts\activate         # Windows
+
+
+
+# ⚙️ Environment Setup
+
+## 1️⃣ Create Virtual Environment
+
+```bash
+python -m venv landcover_env
+```
+
+Activate environment:
+
+**Linux / Mac**
+```bash
+source landcover_env/bin/activate
+```
+
+**Windows**
+```bash
+landcover_env\Scripts\activate
+```
+
+---
+
+## 2️⃣ Install Dependencies
+
+Upgrade pip:
+
+```bash
+pip install --upgrade pip
+```
+
+Install required libraries:
+
+```bash
+pip install torch torchvision
+pip install segmentation-models-pytorch timm
+pip install opencv-python
+pip install numpy matplotlib tqdm albumentations
+```
+
+Or install using requirements file:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# 📥 Download Dataset
+
+This project uses the **LandCover.ai** dataset.
+
+To download and prepare the dataset:
+
+```bash
+python download_data.py
+cd data/raw/landcoverai/
+python python split.py
+```
+
+Dataset structure:
+
+```
+data/
+└── raw/
+    └── landcoverai/
+        ├── images/
+        ├── masks/
+        ├── output/
+        ├── train.txt
+        ├── val.txt
+        └── test.txt
+```
+
+---
+
+# 🏋️ Training
+
+Run the training script:
+
+```bash
+python train.py \
+--data_dir data/raw/landcoverai \
+--train_split data/raw/landcoverai/train.txt \
+--val_split data/raw/landcoverai/val.txt \
+--epochs 50 \
+--batch_size 8 \
+--lr 1e-4 \
+--val_interval 5
+```
+
+# 🧪 Testing
+
+Evaluate model on the test dataset:
+
+```bash
+python test.py \
+--data_dir data/raw/landcoverai \
+--test_split data/raw/landcoverai/test.txt \
+--model_path outputs/models/model_name.pth
+```
+
+
+
+# 🔎 Inference on Single Image
+
+Run inference on a `.tif` satellite image:
+
+```bash
+python inference.py \
+--model_path outputs/models/model_name \
+--image_path path/to/image.tif
+```
+
+
+
+
+# 🎨 Color Mapping
+
+| Class | Category | Color |
+|--------|----------|--------|
+| 0 | Background / Ground | Grey |
+| 1 | Urban / Buildings | Red |
+| 2 | Vegetation / Forest | Green |
+| 3 | Water | Blue |
+| 4 | Roads | Yellow |
+
+---
+
+# 📜 License
+
+This project is released under the MIT License.
