@@ -6,17 +6,6 @@ The objective is to accurately segment satellite images into five land cover cat
 
 ---
 
-## 📌 Land Cover Classes (5)
-
-| Class ID | Category | Description |
-|----------|----------|-------------|
-| 0 | Background / Ground | Bare soil and non-structured land |
-| 1 | Water | Rivers, lakes, water bodies |
-| 2 | Urban / Buildings | Residential and constructed areas |
-| 3 | Vegetation / Forest | Trees and dense vegetation |
-| 4 | Roads | Transportation infrastructure |
-
----
 
 <!-- ## 🧠 Model Architecture
 
