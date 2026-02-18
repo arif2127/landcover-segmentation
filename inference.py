@@ -38,7 +38,7 @@ def main():
     overlay = cv2.addWeighted(image_rgb, 0.6, pred_color, 0.4, 0)
 
     
-    cv2.imwrite("images/overlay205.png", cv2.cvtColor(overlay, cv2.COLOR_RGB2BGR))
+    cv2.imwrite("images/overlay.png", cv2.cvtColor(overlay, cv2.COLOR_RGB2BGR))
 
 
 if __name__ == "__main__":
@@ -46,4 +46,4 @@ if __name__ == "__main__":
 
 
 
-# CUDA_VISIBLE_DEVICES=2 python inference.py --image_path data/raw/landcoverai/images/N-34-97-C-b-1-2.tif --model_path outputs/models/best_model_epoch205_miou0.8133.pth
+# CUDA_VISIBLE_DEVICES=2 python inference.py --image_path data/raw/landcoverai/images/N-34-97-C-b-1-2.tif --model_path outputs/models/best_model_epoch260_miou0.8141.pth
