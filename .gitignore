@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+
+# Dataset
+data/
+*.tif
+*.png
+
+# Outputs
+outputs/
+*.pth
+
+# Jupyter
+torch
+
