@@ -9,7 +9,7 @@ import cv2
 # Color Map (5 Classes)
 # -------------------------
 COLOR_MAP = {
-    0: (192, 192, 192),      # Background / Ground - Green
+    0: (192, 192, 192),      # Background / Ground - Grey
     1: (255, 0, 0),      # Building - Red
     2: (34, 139, 34),    # Woodland - Dark Green
     3: (0, 0, 255),      # Water - Blue
